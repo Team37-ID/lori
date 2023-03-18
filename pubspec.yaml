@@ -66,8 +66,11 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/logo/android/play_store_512.png"
-  adaptive_icon_foreground: "assets/logo/android/play_store_512.png"
+  adaptive_icon_foreground: "assets/logo/lori-logo-text.png"
   adaptive_icon_background: "#C5F356"
+
+flutter_native_splash:
+  color: "#C5F356"
 
   # To add assets to your application, add an assets section, like this:
   # assets:
