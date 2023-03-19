@@ -63,6 +63,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/logo/android/play_store_512.png
+    - assets/illustration/onboarding.png
 
 flutter_icons:
   android: true
