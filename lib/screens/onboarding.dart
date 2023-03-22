@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lori/src/colors/custom_primary_colors.dart';
+import 'package:lori/src/colors/system_colors.dart';
 
 class Onboarding extends StatelessWidget {
   const Onboarding({super.key});
@@ -24,7 +25,7 @@ class Onboarding extends StatelessWidget {
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
-                      color: PrimaryColors.lightPrimary,
+                      color: SystemColors.lightPrimary,
                     ),
                   ),
                   Text(
@@ -33,21 +34,21 @@ class Onboarding extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
                       height: 1.5,
-                      color: PrimaryColors.lightOnPrimaryContainer,
+                      color: SystemColors.lightOnPrimaryContainer,
                     ),
                   ),
                 ],
               ),
               Directionality(
                 textDirection: TextDirection.rtl,
-                child: Container(
+                child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton.icon(
                     //! TODO: Add onpressed function
                     onPressed: () {},
                     icon: const Icon(
                       Icons.arrow_back_rounded,
-                      color: PrimaryColors.lightPrimary,
+                      color: SystemColors.lightPrimary,
                       size: 16,
                     ),
                     label: Text(
@@ -55,12 +56,12 @@ class Onboarding extends StatelessWidget {
                       style: GoogleFonts.notoSans(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: PrimaryColors.lightPrimary,
+                        color: SystemColors.lightPrimary,
                       ),
                     ),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                        PrimaryColors.lightPrimaryContainer,
+                        SystemColors.lightPrimaryContainer,
                       ),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
