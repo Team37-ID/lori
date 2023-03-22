@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lori/screens/auth/signup.dart';
 import 'package:lori/screens/onboarding.dart';
 import 'package:lori/src/colors/system_colors.dart';
 
@@ -17,6 +18,11 @@ class MyApp extends StatelessWidget {
       theme:
           ThemeData(scaffoldBackgroundColor: SystemColors.lightSurfaceVariant),
       home: const Onboarding(),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => const Onboarding()),
+        GetPage(name: '/signup', page: () => const SignUp()),
+      ],
     );
   }
 }
