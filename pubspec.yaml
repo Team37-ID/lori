@@ -39,6 +39,7 @@ dependencies:
   flutter_native_splash: ^2.2.19
   google_fonts: ^4.0.3
   get: ^4.6.5
+  flutter_svg: ^2.0.4
 
 dev_dependencies:
   flutter_test:
