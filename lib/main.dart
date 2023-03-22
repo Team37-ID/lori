@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lori/screens/onboarding.dart';
+import 'package:lori/src/colors/system_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFE2E4D4)),
+      theme:
+          ThemeData(scaffoldBackgroundColor: SystemColors.lightSurfaceVariant),
       home: const Onboarding(),
     );
   }
