@@ -64,6 +64,9 @@ flutter:
   assets:
     - assets/logo/android/play_store_512.png
     - assets/illustration/onboarding.png
+    - assets/logo/third_party/google.svg
+    - assets/logo/third_party/facebook.svg
+    - assets/logo/third_party/twitter.svg
 
 flutter_icons:
   android: true
