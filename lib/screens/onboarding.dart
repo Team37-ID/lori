@@ -44,8 +44,7 @@ class Onboarding extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton.icon(
-                    //! TODO: Add onpressed function
-                    onPressed: () {},
+                    onPressed: () => Get.toNamed('/signup'),
                     icon: const Icon(
                       Icons.arrow_back_rounded,
                       color: SystemColors.lightPrimary,
