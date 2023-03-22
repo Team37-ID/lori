@@ -1,0 +1,245 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lori/src/colors/system_colors.dart';
+
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
+
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: LayoutBuilder(
+            builder:
+                (BuildContext context, BoxConstraints viewportConstraints) {
+              return SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints:
+                      BoxConstraints(minHeight: viewportConstraints.maxHeight),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        alignment: Alignment.topRight,
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Skip',
+                            style: GoogleFonts.notoSans(
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                              color:
+                                  SystemColors.lightOnSurface.withOpacity(0.6),
+                              letterSpacing: 0.4,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Create your account',
+                            style: GoogleFonts.notoSans(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: SystemColors.lightPrimary,
+                              height: 1.4,
+                              wordSpacing: 0.5,
+                            ),
+                          ),
+                          Text(
+                            'You are one step closer',
+                            style: GoogleFonts.notoSans(
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color:
+                                  SystemColors.lightOnSurface.withOpacity(0.6),
+                              letterSpacing: 0.15,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 32),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Email',
+                                style: GoogleFonts.notoSans(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const SizedBox(height: 8.0),
+                              Form(
+                                child: TextFormField(
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                  autofillHints: const [AutofillHints.email],
+                                  keyboardType: TextInputType.emailAddress,
+                                  style: const TextStyle(
+                                    color: SystemColors.lightOnSurface,
+                                  ),
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: SystemColors.lightSurface,
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                      vertical: 12,
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderSide: const BorderSide(
+                                        color: SystemColors.lightPrimary,
+                                      ),
+                                    ),
+                                    hintText: 'janice.cl@gmail.com',
+                                    hintStyle: TextStyle(
+                                      color: SystemColors.lightOnSurface
+                                          .withOpacity(0.6),
+                                    ),
+                                    prefixIcon: const Padding(
+                                      padding: EdgeInsets.all(12.0),
+                                      child: Icon(
+                                        Icons.email_outlined,
+                                        size: 24,
+                                        color: SystemColors.lightOnSurface,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 16.0),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Password',
+                                style: GoogleFonts.notoSans(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const SizedBox(height: 8.0),
+                              Form(
+                                child: TextFormField(
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                  autofillHints: const [AutofillHints.email],
+                                  keyboardType: TextInputType.text,
+                                  obscureText: true,
+                                  enableSuggestions: true,
+                                  style: const TextStyle(
+                                    color: SystemColors.lightOnSurface,
+                                  ),
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: SystemColors.lightSurface,
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                      vertical: 12,
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderSide: const BorderSide(
+                                        color: SystemColors.lightPrimary,
+                                      ),
+                                    ),
+                                    hintText: '••••••••••••',
+                                    hintStyle: TextStyle(
+                                      color: SystemColors.lightOnSurface
+                                          .withOpacity(0.6),
+                                    ),
+                                    prefixIcon: const Padding(
+                                      padding: EdgeInsets.all(12.0),
+                                      child: Icon(
+                                        Icons.lock_outline,
+                                        size: 24,
+                                        color: SystemColors.lightOnSurface,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 48.0),
+                      Column(
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                const Expanded(
+                                  child: Divider(
+                                    color: SystemColors.lightOutline,
+                                    height: 1.5,
+                                    thickness: 1,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal:
+                                        MediaQuery.of(context).size.width *
+                                            0.05,
+                                  ),
+                                  child: Text(
+                                    'Or sign up with',
+                                    style: GoogleFonts.notoSans(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                      color: SystemColors.lightOnSurface
+                                          .withOpacity(0.6),
+                                    ),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: Divider(
+                                    color: SystemColors.lightOutline,
+                                    height: 1.5,
+                                    thickness: 1,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
