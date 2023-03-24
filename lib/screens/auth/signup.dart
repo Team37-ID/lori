@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lori/src/colors/system_colors.dart';
+import 'package:lori/src/ui/skip_button.dart';
 import 'package:lori/src/ui/social_button.dart';
 
 class SignUp extends StatefulWidget {
@@ -32,19 +33,7 @@ class _SignUpState extends State<SignUp> {
                     children: [
                       Container(
                         alignment: Alignment.topRight,
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Skip',
-                            style: GoogleFonts.notoSans(
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal,
-                              color:
-                                  SystemColors.lightOnSurface.withOpacity(0.6),
-                              letterSpacing: 0.4,
-                            ),
-                          ),
-                        ),
+                        child: const SkipButton(),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
