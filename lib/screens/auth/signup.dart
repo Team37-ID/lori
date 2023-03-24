@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lori/src/colors/system_colors.dart';
 import 'package:lori/src/ui/skip_button.dart';
 import 'package:lori/src/ui/social_button.dart';
+import 'package:lori/src/ui/subtitle_text.dart';
+import 'package:lori/src/ui/title_text.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -41,25 +43,14 @@ class _SignUpState extends State<SignUp> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Create your account',
-                                style: GoogleFonts.notoSans(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                  color: SystemColors.lightPrimary,
-                                  height: 1.4,
-                                  wordSpacing: 0.5,
-                                ),
+                              const TitleText(
+                                text: 'Create your account',
+                                color: SystemColors.lightPrimary,
                               ),
-                              Text(
-                                'You are one step closer',
-                                style: GoogleFonts.notoSans(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.normal,
-                                  color: SystemColors.lightOnSurface
-                                      .withOpacity(0.6),
-                                  letterSpacing: 0.15,
-                                ),
+                              SubtitleText(
+                                text: 'You are one step close',
+                                color: SystemColors.lightOnSurface
+                                    .withOpacity(0.6),
                               ),
                             ],
                           ),
