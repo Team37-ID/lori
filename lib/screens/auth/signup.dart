@@ -1,6 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lori/src/colors/system_colors.dart';
+import 'package:lori/src/ui/social_button.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -25,6 +28,7 @@ class _SignUpState extends State<SignUp> {
                       BoxConstraints(minHeight: viewportConstraints.maxHeight),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         alignment: Alignment.topRight,
@@ -45,32 +49,32 @@ class _SignUpState extends State<SignUp> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Create your account',
-                            style: GoogleFonts.notoSans(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: SystemColors.lightPrimary,
-                              height: 1.4,
-                              wordSpacing: 0.5,
-                            ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Create your account',
+                                style: GoogleFonts.notoSans(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: SystemColors.lightPrimary,
+                                  height: 1.4,
+                                  wordSpacing: 0.5,
+                                ),
+                              ),
+                              Text(
+                                'You are one step closer',
+                                style: GoogleFonts.notoSans(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal,
+                                  color: SystemColors.lightOnSurface
+                                      .withOpacity(0.6),
+                                  letterSpacing: 0.15,
+                                ),
+                              ),
+                            ],
                           ),
-                          Text(
-                            'You are one step closer',
-                            style: GoogleFonts.notoSans(
-                              fontSize: 16,
-                              fontWeight: FontWeight.normal,
-                              color:
-                                  SystemColors.lightOnSurface.withOpacity(0.6),
-                              letterSpacing: 0.15,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 32),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                          const SizedBox(height: 32),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -125,12 +129,7 @@ class _SignUpState extends State<SignUp> {
                               )
                             ],
                           ),
-                        ],
-                      ),
-                      const SizedBox(height: 16.0),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                          const SizedBox(height: 16.0),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -187,46 +186,127 @@ class _SignUpState extends State<SignUp> {
                               )
                             ],
                           ),
+                          const SizedBox(height: 48.0),
+                          Column(
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    const Expanded(
+                                      child: Divider(
+                                        color: SystemColors.lightOutline,
+                                        height: 1.5,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal:
+                                            MediaQuery.of(context).size.width *
+                                                0.05,
+                                      ),
+                                      child: Text(
+                                        'Or sign up with',
+                                        style: GoogleFonts.notoSans(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.normal,
+                                          color: SystemColors.lightOnSurface
+                                              .withOpacity(0.6),
+                                        ),
+                                      ),
+                                    ),
+                                    const Expanded(
+                                      child: Divider(
+                                        color: SystemColors.lightOutline,
+                                        height: 1.5,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(height: 16.0),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SocialButton(
+                                    iconPath:
+                                        "assets/logo/third_party/google.svg",
+                                    onPressed: () {},
+                                  ),
+                                  const SizedBox(width: 16.0),
+                                  SocialButton(
+                                    iconPath:
+                                        "assets/logo/third_party/facebook.svg",
+                                    onPressed: () {},
+                                  ),
+                                  const SizedBox(width: 16.0),
+                                  SocialButton(
+                                    iconPath:
+                                        "assets/logo/third_party/twitter.svg",
+                                    onPressed: () {},
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ],
                       ),
-                      const SizedBox(height: 48.0),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.1,
+                      ),
                       Column(
                         children: [
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          ElevatedButton(
+                            onPressed: () => Get.toNamed('/personal'),
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                SystemColors.lightPrimaryContainer,
+                              ),
+                              minimumSize: MaterialStateProperty.all<Size>(
+                                Size(MediaQuery.of(context).size.width, 48.0),
+                              ),
+                            ),
+                            child: Text(
+                              'Sign up',
+                              style: GoogleFonts.notoSans(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: SystemColors.lightPrimary,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 8.0),
+                          RichText(
+                            text: TextSpan(
                               children: [
-                                const Expanded(
-                                  child: Divider(
-                                    color: SystemColors.lightOutline,
-                                    height: 1.5,
-                                    thickness: 1,
+                                TextSpan(
+                                  text: 'Already have an account? ',
+                                  style: GoogleFonts.notoSans(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w500,
+                                    color: SystemColors.lightOnSurface,
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal:
-                                        MediaQuery.of(context).size.width *
-                                            0.05,
+                                TextSpan(
+                                  text: 'Sign in',
+                                  style: GoogleFonts.notoSans(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w500,
+                                    color: SystemColors.lightSecondary,
                                   ),
-                                  child: Text(
-                                    'Or sign up with',
-                                    style: GoogleFonts.notoSans(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.normal,
-                                      color: SystemColors.lightOnSurface
-                                          .withOpacity(0.6),
-                                    ),
-                                  ),
-                                ),
-                                const Expanded(
-                                  child: Divider(
-                                    color: SystemColors.lightOutline,
-                                    height: 1.5,
-                                    thickness: 1,
-                                  ),
-                                ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {},
+                                )
                               ],
                             ),
                           ),
