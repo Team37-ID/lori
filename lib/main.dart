@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lori/screens/auth/signup.dart';
+import 'package:lori/screens/new_user/personal.dart';
 import 'package:lori/screens/onboarding.dart';
 import 'package:lori/src/colors/system_colors.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/', page: () => const Onboarding()),
         GetPage(name: '/signup', page: () => const SignUp()),
+        GetPage(name: '/personal', page: () => const Personal())
       ],
     );
   }
