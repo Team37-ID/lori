@@ -63,6 +63,7 @@ class _SignUpState extends State<SignUp> {
                                 style: GoogleFonts.notoSans(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w600,
+                                  color: SystemColors.lightOnSurface,
                                 ),
                               ),
                               const SizedBox(height: 8.0),
